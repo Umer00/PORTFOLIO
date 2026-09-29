@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Home</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'portfolio_app/style.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">Portfolio<span class="dot">.</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+                <li><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+                <li><a href="{% url 'skills' %}" class="nav-link">Skills</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-tagline">Welcome to my universe</span>
+                <h1 class="hero-heading">Hi, I'm <span class="accent-text">John Doe</span></h1>
+                <h2 class="hero-subheading">Full Stack Developer & Designer</h2>
+                <p class="hero-description">
+                    I build premium, responsive, and performance-oriented web applications. Experiencing user needs, designing seamless interactions, and converting them into elegant code is what I live for.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{% static 'portfolio_app/files/cv.pdf' %}" class="btn btn-glow">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                    <a href="{% url 'projects' %}" class="btn btn-outline">
+                        View Projects <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-image-wrapper">
+                    <img src="{% static 'portfolio_app/images/profile.jpg' %}" alt="Profile" class="profile-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <a href="#" class="back-to-top" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

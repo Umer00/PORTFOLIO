@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Contact</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'portfolio_app/style.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">Portfolio<span class="dot">.</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                <li><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+                <li><a href="{% url 'skills' %}" class="nav-link">Skills</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-link active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="section-header">
+                <span class="section-tagline">Get In Touch</span>
+                <h1 class="section-title">Let's Create <span class="accent-text">Together</span></h1>
+                <p class="section-subtitle">Have a project in mind, want to collaborate, or just want to say hi? Drop me a message!</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Contact Info Panel (Left) -->
+                <div class="contact-info-panel">
+                    <h2 class="panel-title">Contact Information</h2>
+                    <p class="panel-desc">Feel free to reach out to me through any of the channels below. I'll get back to you as soon as possible.</p>
+                    
+                    <div class="contact-details">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-label">Phone</span>
+                                <a href="tel:+92-333-3847263" class="info-link">+92-333-3847263</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-label">Email</span>
+                                <a href="mailto:umerfarooq504131@gmail.com" class="info-link">umerfarooq504131@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Karachi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-socials">
+                        <span class="socials-title">Follow Me</span>
+                        <div class="social-btn-group">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Panel (Right) -->
+                <div class="contact-form-panel">
+                    <form method="POST" action="" class="contact-form">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell me about your project or inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-glow w-100">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <a href="#" class="back-to-top" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
